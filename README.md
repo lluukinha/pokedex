@@ -3,10 +3,15 @@
 Este código é um projeto que inclui um backend feito em PHP e um frontend usando somente HTML, CSS e JavaScript (jQuery também)
 Todo o banco de dados foi gerado através de uma planilha em excel.
 
-## Projeto
+
+## Projeto e Links
 Todo o projeto foi gravado desde o início, e você pode acompanhá-lo neste link aqui:
 
-[Criando a Pokedex](https://www.youtube.com/playlist?list=PLIUcOrGGQI6Q7iXUBgHWilAXeHdMkZRFS)
+[Criando a Pokedex](https://bit.ly/phpDex)
+
+[Demo](http://www.pokedexphp.com.br)
+
+[Imagens e Excel com Banco de Dados](https://bit.ly/PokedexPHP)
 
 ## Instalação
 
