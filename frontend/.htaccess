@@ -1,0 +1,10 @@
+Options +FollowSymLinks +ExecCGI -Indexes
+
+ErrorDocument 404 /erros/404.php
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  RewriteRule ^/?$        /index.html [NC,L]                 #Página Inicial
+  RewriteRule ^mobile/?$  /mobile.html [NC,L]   		 #Busca Geral
+</IfModule>

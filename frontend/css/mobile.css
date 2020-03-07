@@ -1,0 +1,279 @@
+@font-face {
+    font-family: "Pokemon";
+    src: url("../font/VCR_OSD_MONO_1.001.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Pokemon;
+}
+
+#pokedex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background: linear-gradient(90deg, rgba(255,32,32,1) 0%, rgba(235,0,0,1) 31%, rgba(147,21,21,1) 100%);
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#imagem {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background-color: #F4F4F4;
+    border: 3px solid#f67272;
+    transform: scale(1.1);
+}
+
+#imagem > img {
+    max-width: 200px !important;
+}
+
+#descricao {
+    width: 80%;
+    background-color: #f67272;
+    text-align: justify;
+    padding: 15px;
+    height: 25vh;
+    overflow: auto;
+    border-radius: 5px;
+    color: #554949;
+    margin-bottom: 25px;
+}
+
+#titulo {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 1px 2px black;
+}
+
+#tipos {
+    margin: 5px;
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+}
+
+#tipos > span {
+    background-color: green;
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-shadow: 1px 2px 5px #444;
+    cursor: pointer;
+}
+
+#evolucoes {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1rem;
+    text-align: center;
+}
+
+#busca {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#busca > input {
+    width: 100%;
+    padding-left: 20px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#busca>select {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-left: 1px solid gray;
+}
+
+#busca>input,#busca>select {
+    height: 30px;
+    border: none;
+}
+
+#lista {
+    margin-top: 20px;
+    width: 90%;
+    overflow: auto;
+    height: 60vh;
+    background-color: #de3131;
+    box-shadow: 2px 4px 4px #333;
+    border-radius: 10px;
+}
+
+#lista>table {
+    width: 100%;
+    background-color: #de3131;
+}
+
+#lista>table>tbody>tr>td {
+    height: 30px !important;
+    border-bottom: 1px solid #ff4343;
+}
+
+#lista>table>tbody>tr:hover, #lista>table>tbody>tr>td:hover {
+    background-color: red;
+    cursor: pointer;
+}
+
+.pokemonSelecionado {
+    background-color: #9a1b1b !important;
+    color: white;
+}
+
+td {
+    text-align: center;
+}
+
+.nomePokemon {
+    text-align: left !important;
+}
+
+.evolucoesPokemon:hover {
+    color: #FFF;
+    cursor: pointer;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background: linear-gradient(90deg,rgb(144, 0, 0) 0,rgb(179, 18, 18) 31%,rgb(62, 0, 0) 100%);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    padding-left: 20px;
+}
+
+.sidenav a {
+    margin-top:20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #EEE;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#btnMenu {
+    position: absolute;
+    top: 5px;
+    right: 25px;
+    margin-left: 50px;
+}
+
+#btnMenu>img {
+    width: 36px;
+}
+
+#menuMobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+#modal {
+    display:none;
+}
+
+#modal-content {
+    position: fixed;
+    width: 100%;
+    overflow: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 20px;
+    z-index: 1;
+}
+
+.modal-body {
+    background-color: white;
+    border-radius:10px;
+    max-width: 500px;
+    box-shadow: 2px 5px 10px black;
+    padding:20px;
+    text-align: center;
+    padding:20px;
+}
+
+.modal-body > button {
+    width: 200px;
+    height: 40px;
+    background-color: blue;
+    color: white;
+    text-align: center;
+}
+
+.modal-body > img {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    height: auto;
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.entre-botoes {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-light {
+    color: #212529;
+    background-color: #dae0e5;
+    border-color: #d3d9df;
+}

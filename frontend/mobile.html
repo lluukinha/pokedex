@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanto Pokedex - PHP/JS</title>
+    <meta name="description" content="Pokeagenda de Kanto feita com PHP e JS, para fins de estudo" />
+    <meta name="keywords" content="Pokedex, Pokemon, Pokedex PHP, Kanto Pokedex, Pokeagenda, Pokeagenda Kanto" />
+    <meta name='mobile-web-app-capable' content='yes' />
+    <meta name='apple-mobile-web-app-capable' content='yes' />
+    <meta name='apple-mobile-web-app-title' content='Pokedex' />
+    <meta name='apple-mobile-web-app-status-bar-style' content='#FF0000' />
+    <meta name="msapplication-TileColor" content="#FF0000" />
+    <meta name="theme-color" content="#FF0000" />
+    <meta name="msapplication-TileImage" content="dex.png" />
+    <link rel='apple-touch-startup-image' href='dex.png' />
+    <link rel='apple-touch-icon' href='dex.png' />
+    <link rel='apple-touch-icon' sizes='72x72' href='dex.png' />
+    <link rel='apple-touch-icon' sizes='114x114' href='dex.png' />
+    <link rel='apple-touch-icon' sizes='144x144' href='dex.png' />
+    <link rel='icon' sizes='192x192' href='dex.png' />
+    <link rel='icon' sizes='128x128' href='dex.png' />
+    <!-- transforma em APP ao clicar em criar atalho na tela inicial -->
+    <script type="text/javascript">
+        (function (document, navigator, standalone) {
+            if ((standalone in navigator) && navigator[standalone]) {
+                var curnode, location = document.location, stop = /^(a|html)$/i;
+                document.addEventListener('click', function (e) {
+                    curnode = e.target;
+                    while (!(stop).test(curnode.nodeName)) {
+                        curnode = curnode.parentNode;
+                    }
+                    if (
+                        'href' in curnode &&
+                        (chref = curnode.href).replace(location.href, '').indexOf('#') && // is not an anchor
+                        (!(/^[a-z\+\.\-]+:/i).test(chref) ||
+                            chref.indexOf(location.protocol + '//' + location.host) === 0)
+                    ) {
+                        e.preventDefault();
+                        location.href = curnode.href;
+                    }
+                }, false);
+            }
+        })(document, window.navigator, 'standalone');
+    </script>
+    <!-- fim do código que transforma em APP ao clicar em criar atalho na tela inicial -->
+    <link rel="stylesheet" href="css/mobile.css">
+</head>
+
+<body>
+    <audio id="battle">
+        <source src="battle.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="menu" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div id="menuMobile">
+            <div id="busca">
+                <input type="text" placeholder="Pesquise aqui" onkeyup="criarTabela()" />
+                <select onchange="criarTabela();"></select>
+            </div>
+            <div id="lista">
+                <table>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <a href="https://www.youtube.com/lucasdev" target="_blank">Desenvolvido por Lucas</a>
+        </div>
+    </div>
+
+    <div id="btnMenu" onclick="openNav()">
+        <img src="menu.png" />
+    </div>
+
+    <div id="modal">
+        <div id="modal-content">
+            <div class="modal-body"></div>
+        </div>
+    </div>
+
+    <div id="pokedex">
+        <div id="titulo"></div>
+
+        <div id="imagem">
+            <img src="img/nenhum.jpg" default="img/nenhum.jpg" />
+        </div>
+
+        <div id="evolucoes">
+            <div id="evoluiDe">
+                Evolui de:<br>
+                <span>NENHUM</span>
+            </div>
+            <div id="evoluiPara">
+                Evolui para:<br>
+                <span>NENHUM</span>
+            </div>
+        </div>
+
+        <div id="tipos"></div>
+        <div id="descricao"></div>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/mobile.js"></script>
+</body>
+
+</html>

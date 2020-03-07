@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanto Pokedex - PHP/JS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <audio id="battle">
+        <source src="battle.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="modal">
+        <div id="modal-content">
+            <div class="modal-body"></div>
+        </div>
+    </div>
+
+    <section>
+        <h1>Pokedex PHP 0.1</h1>
+        <div id="pokedex">
+            <div id="left" class="dexside">
+                <div id="titulo"></div>
+
+                <div id="imagem">
+                    <img src="img/nenhum.jpg" default="img/nenhum.jpg" />
+                </div>
+
+                <div id="evolucoes">
+                    <div id="evoluiDe">
+                        Evolui de:<br>
+                        <span>NENHUM</span>
+                    </div>
+                    <div id="evoluiPara">
+                        Evolui para:<br>
+                        <span>NENHUM</span>
+                    </div>
+                </div>
+
+                <div id="tipos"></div>
+                <div id="descricao"></div>
+            </div>
+            <div id="right" class="dexside">
+                <div id="busca">
+                    <input type="text" placeholder="Pesquise aqui" onkeyup="criarTabela()" />
+                    <select onchange="criarTabela();"></select>
+                </div>
+                <div id="lista">
+                    <table>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <h1>Desenvolvido por <a href="https://www.youtube.com/lucasdev" target="_blank">Lucas</a></h1>
+    </section>
+    <script src="js/jquery.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

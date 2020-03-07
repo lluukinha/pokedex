@@ -1,0 +1,250 @@
+@font-face {
+    font-family: "Pokemon";
+    src: url("../font/VCR_OSD_MONO_1.001.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Pokemon;
+}
+
+a {
+    color: white !important;
+}
+
+a:visited {
+    color: white !important;
+}
+
+section>h1 {
+    color: white;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    text-shadow: 2px 2px 3px #333;
+}
+
+section  {
+    position: relative;
+    height: 100vh;
+    background: #1c2431;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#pokedex {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 20px;
+    background: linear-gradient(90deg, rgba(255,32,32,1) 0%, rgba(235,0,0,1) 31%, rgba(147,21,21,1) 100%);
+    width: 650px;
+    box-shadow: 2px 10px 12px black;
+}
+
+#left {
+    border-right: 1px solid black;
+}
+
+#right {
+    border-left: 1px solid black;
+}
+
+.dexside {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 325px;
+}
+
+#imagem {
+    background-color: #F4F4F4;
+}
+
+#imagem > img {
+    max-width: 200px !important;
+}
+
+#descricao {
+    width: 90%;
+    background-color: #f67272;
+    margin: 10px;
+    text-align: justify;
+    padding: 5px;
+    height: 180px;
+    overflow: auto;
+    border-radius: 5px;
+    color: #554949;
+}
+
+#titulo {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#tipos {
+    margin: 5px;
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+}
+
+#tipos > span {
+    background-color: green;
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    box-shadow: 1px 2px 5px #444;
+    cursor: pointer;
+}
+
+#evolucoes {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 0.8rem;
+}
+
+#busca {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#busca > input {
+    width: 100%;
+    padding-left: 20px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#busca>select {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-left: 1px solid gray;
+}
+
+#busca>input,#busca>select {
+    height: 30px;
+    border: none;
+}
+
+#lista {
+    margin-top: 20px;
+    width: 90%;
+    overflow: auto;
+    height: 450px;
+    background-color: #f67272;
+}
+
+#lista>table {
+    width: 100%;
+    background-color: #f67272;
+}
+
+#lista>table>tbody>tr>td {
+    height: 30px !important;
+    border-bottom: 1px solid #aaaaaa;
+}
+
+#lista>table>tbody>tr:hover, #lista>table>tbody>tr>td:hover {
+    background-color: red;
+    cursor: pointer;
+}
+
+.pokemonSelecionado {
+    background-color: #9a1b1b !important;
+    color: white;
+}
+
+.nomePokemon {
+    text-align: left;
+}
+
+.evolucoesPokemon:hover {
+    color: #FFF;
+    cursor: pointer;
+}
+
+#modal {
+    display:none;
+}
+
+#modal-content {
+    position: fixed;
+    width: 100%;
+    overflow: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 20px;
+    z-index: 1;
+}
+
+.modal-body {
+    background-color: white;
+    border-radius:10px;
+    max-width: 500px;
+    box-shadow: 2px 5px 10px black;
+    padding:20px;
+    text-align: center;
+    padding:20px;
+}
+
+.modal-body > button {
+    width: 200px;
+    height: 40px;
+    background-color: blue;
+    color: white;
+    text-align: center;
+}
+
+.modal-body > img {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    height: auto;
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.entre-botoes {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-light {
+    color: #212529;
+    background-color: #dae0e5;
+    border-color: #d3d9df;
+}

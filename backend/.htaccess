@@ -1,0 +1,12 @@
+Options +FollowSymLinks +ExecCGI -Indexes
+
+ErrorDocument 404 /erros/404.php
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  RewriteRule ^/?$                      /home.php [NC,L]                      #Página Inicial
+  RewriteRule ^api/pokemons/?$          /sistema/pokemons.php [NC,L]          #Busca Geral
+  RewriteRule ^api/pokemons/(.*)?$      /sistema/pokemons.php?tipo=$1 [NC,L]  #Busca por Tipo
+  RewriteRule ^api/tipos/?$             /sistema/tipos.php [NC,L]             #Carregar Tipos
+</IfModule>
